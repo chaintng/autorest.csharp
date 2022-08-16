@@ -9,10 +9,11 @@ if [ -z "$SWAGGER_FILE" ]; then
   SWAGGER_FILE=/src/input/swagger.json
 fi
 
-mkdir -p /src/input
-mkdir -p input
+
 rm -rf input/*
 rm -rf $OUTPUT_PATH/*
+mkdir -p /src/input
+mkdir -p input
 
 if [[ $SWAGGER_FILE == http* ]]; then
 echo "Im downloading the swagger spec from a remote Url $SWAGGER_FILE to local path $INPUT_PATH"
