@@ -26,11 +26,8 @@ RUN apt-get update && apt-get install -y -q --no-install-recommends \
         wget \
     && rm -rf /var/lib/apt/lists/*
 
-ENV NVM_DIR /usr/local/.nvm
+ENV NVM_DIR /root/.nvm
 ENV NODE_VERSION 16
-
-RUN echo $XDG_CONFIG_HOME
-RUN echo $HOME
 
 # # Install nvm with node and npm
 RUN curl https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash \
