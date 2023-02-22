@@ -33,6 +33,7 @@ ENV NODE_VERSION 16
 RUN curl https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash \
     && . $NVM_DIR/nvm.sh \
     && nvm install $NODE_VERSION \
+    && nvm install-latest-npm
     && nvm alias default $NODE_VERSION \
     && nvm use default \
     && nvm \
