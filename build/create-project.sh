@@ -6,7 +6,7 @@ INPUT_PATH=/src/input/swagger.yaml
 SWAGGER_FILE=${SPEC_FILE}
 
 if [ -z "$SWAGGER_FILE" ]; then
-  SWAGGER_FILE=/src/input/swagger.json
+  SWAGGER_FILE=/src/input/swagger.yaml
 fi
 
 mkdir -p /src/input
@@ -22,7 +22,7 @@ else
   echo "Im setting spec $INPUT_PATH to local path $SWAGGER_FILE"
 fi
 
-eolConverter "/src/input/swagger.yaml"
+eolConverter $INPUT_PATH
 
 if [ "$USE_OPENAPI_V3" = "true" ]; then
   if [ "$USE_DATETIMEOFFSET" = "true" ]; then
